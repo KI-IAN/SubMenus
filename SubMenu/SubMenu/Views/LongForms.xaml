@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="SubMenu.Views.LongForms"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+
+    <ScrollView>
+        <StackLayout>
+
+            <Editor Text="1" />
+
+            <Editor Text="2" />
+
+            <Editor Text="3" />
+
+            <Editor Text="4" />
+            <Editor Text="5" />
+
+            <Editor Text="6" />
+
+            <Editor Text="7" />
+
+            <Editor Text="8" />
+            <Editor Text="9" />
+
+            <Editor Text="10" />
+
+            <Editor Text="11" />
+
+            <Editor Text="12" />
+            <Editor Text="13" />
+
+            <Editor Text="14" />
+
+            <Editor Text="15" />
+
+            <Editor Text="16" />
+            <Editor Text="17" />
+
+            <Editor Text="18" />
+
+            <Editor Text="19" />
+
+            <Editor Text="20" />
+            <Editor Text="21" />
+
+            <Editor Text="22" />
+
+            <Editor Text="23" />
+
+            <Editor Text="24" />
+            <Editor Text="25" />
+
+            <Editor Text="26" />
+
+            <Editor Text="27" />
+
+            <Editor Text="28" />
+
+        </StackLayout>
+    </ScrollView>
+
+
+
+
+</ContentPage>

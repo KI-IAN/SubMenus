@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="SubMenu.SimpleSubMenu.Views.SubMenuPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:model="clr-namespace:SubMenu.SimpleSubMenu.Models"
+    xmlns:viewModel="clr-namespace:SubMenu.SimpleSubMenu.ViewModels"
+    x:Name="subMenuPage"
+    mc:Ignorable="d">
+
+
+    <ContentPage.BindingContext>
+        <viewModel:SubMenuViewModel />
+    </ContentPage.BindingContext>
+
+    <StackLayout>
+
+        <ListView
+            GroupDisplayBinding="{Binding LongName}"
+            IsGroupingEnabled="True"
+            ItemSelected="ListView_ItemSelected"
+            ItemsSource="{Binding GroupedMenuItems}">
+
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="model:NavigationMenuItem">
+                    <ViewCell>
+                        <StackLayout Padding="20,0,0,0">
+                            <Label FontSize="Default" Text="{Binding Title}" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+
+
+            <ListView.GroupHeaderTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="5" Orientation="Horizontal">
+                            <Label FontSize="Medium" Text="{Binding LongName}" />
+                            <Image
+                                HeightRequest="20"
+                                HorizontalOptions="End"
+                                Source="{Binding StateIcon}"
+                                WidthRequest="20" />
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Command="{Binding Source={x:Reference subMenuPage}, Path=BindingContext.RefreshMenus}"
+                                    CommandParameter="{Binding .}"
+                                    NumberOfTapsRequired="1" />
+                            </StackLayout.GestureRecognizers>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.GroupHeaderTemplate>
+
+
+        </ListView>
+
+
+    </StackLayout>
+
+
+</ContentPage>

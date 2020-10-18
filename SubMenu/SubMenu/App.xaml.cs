@@ -12,7 +12,9 @@ namespace SubMenu
             InitializeComponent();
 
             //MainPage = new MainPage();
-            MainPage = new Hotels(new ViewModels.HotelsGroupViewModel());
+            //MainPage = new Hotels(new ViewModels.HotelsGroupViewModel());
+            //MainPage = new Views.LongForms();
+            MainPage = new NavigationPage(new SimpleSubMenu.Views.SubMenuPage());
         }
 
         protected override void OnStart()

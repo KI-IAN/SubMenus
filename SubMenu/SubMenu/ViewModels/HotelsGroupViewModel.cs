@@ -33,6 +33,8 @@ namespace SubMenu.ViewModels
         }
 
         public bool isExpanded = false;
+
+
         private void ExecuteRefreshItemsCommand(HotelViewModel item)
         {
             if (_oldHotel == item)
@@ -53,9 +55,11 @@ namespace SubMenu.ViewModels
 
             _oldHotel = item;
         }
-        async System.Threading.Tasks.Task ExecuteLoadItemsCommandAsync()
+
+
+        async Task ExecuteLoadItemsCommandAsync()
         {
-            await Task.Delay(10);
+            await Task.Delay(1);
             try
             {
                 if (IsBusy)
